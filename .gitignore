@@ -1,0 +1,8 @@
+node_modules/
+lib/
+ayva_cache/
+set_env.bat
+.DS_Store
+.idea
+yarn-error.log
+db/

@@ -1,0 +1,44 @@
+{
+  "name": "build-test",
+  "version": "0.0.1",
+  "main": "lib/app.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@membrane/common": "^0.3.2",
+    "@membrane/util": "^0.2.0",
+    "fs-extra": "^5.0.0",
+    "graphql": "^0.11.7",
+    "immutable": "^3.8.2",
+    "pouchdb": "^6.4.3",
+    "pouchdb-find": "^6.4.3",
+    "source-map-support": "^0.5.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^4.17.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-flowtype": "^2.43.0",
+    "flow-bin": "^0.65.0",
+    "jest": "^22.2.2",
+    "nodemon": "^1.14.12",
+    "sane": "^2.4.1"
+  },
+  "scripts": {
+    "build": "babel src/ --out-dir lib/ ",
+    "start": "node lib/app.js",
+    "watch": "babel-node ./resources/watch.js",
+    "dev": "nodemon --no-deprecation --watch lib/",
+    "dev-inspect": "nodemon --no-deprecation --inspect --trace-warnings --watch lib/",
+    "test": "jest --forceExit --useStderr",
+    "clean": "rm -rf lib/"
+  },
+  "jest": {
+    "testRegex": "/__tests__/.*\\.js$"
+  }
+}
