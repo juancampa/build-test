@@ -1,11 +1,6 @@
 # This file is needed in order to pass an NPM_TOKEN so that the builder can
 # access our private repos
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [
-    'pull',
-    'gcr.io/$PROJECT_ID/$_APP_NAME-build:latest']
-
 # build all the way
 - name: 'gcr.io/cloud-builders/docker'
   args: [
@@ -16,10 +11,4 @@ steps:
     '--build-arg', 'NPM_TOKEN=$_NPM_TOKEN',
     '.']
 
-# Push the image to container registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/$_APP_NAME']
-
-images:
-- 'gcr.io/$PROJECT_ID/$_APP_NAME-build'
-- 'gcr.io/$PROJECT_ID/$_APP_NAME'
+images: []
