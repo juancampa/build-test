@@ -7,6 +7,8 @@ LABEL intermediate=true
 ARG NPM_TOKEN
 RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
+RUN python --version
+
 # Install dependencies (including dev)
 COPY package.json yarn.lock ./
 RUN yarn --frozen-lockfile install
